@@ -16,8 +16,7 @@ chmod +x raspberry-pi3/build.sh
 ./raspberry-pi3/build.sh
 
 # tag it
-git add -A
-git commit -m "Bump to version $version"
+git commit --allow-empty -m "Bump to version $version"
 git tag -a "$version" -m "version $version"
 git push
 git push --tags

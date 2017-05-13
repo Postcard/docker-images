@@ -6,10 +6,12 @@ env.forward_agent = True
 env.git_url = "git@github.com:Postcard/docker-images.git"
 env.projectname = "docker-images"
 env.hosts = ["34.251.244.127"]
+env.user = "ec2-user"
 
 @task
 def release():
-    with(cd("/home/ec2-user")):
+    with(cd("/home/ec2-user/docker-images")):
         run('git fetch origin')
-        run('git reset --hard origin/%s')
-        run('cd docker-images && chmod +x release.sh && ./release.sh')
+        run('git reset --hard origin/master')
+        run('chmod +x release.sh')
+        sudo('./release.sh')

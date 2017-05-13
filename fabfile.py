@@ -13,5 +13,4 @@ def release():
     with(cd("/home/ec2-user/docker-images")):
         run('git fetch origin')
         run('git reset --hard origin/master')
-        run('chmod +x release.sh')
-        sudo('./release.sh')
+        run('./release.sh')

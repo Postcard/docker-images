@@ -18,8 +18,8 @@ chmod +x raspberry-pi3/build.sh
 # tag it
 git commit --allow-empty -m "Bump to version $version"
 git tag -a "$version" -m "version $version"
-git push
-git push --tags
+git push origin
+git push origin --tags
 
 docker tag $COMPANY/$IMAGE_1:latest $COMPANY/$IMAGE_1:$version
 docker tag $COMPANY/$IMAGE_2:latest $COMPANY/$IMAGE_2:$version

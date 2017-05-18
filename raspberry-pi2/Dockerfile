@@ -5,7 +5,6 @@ ENV INITSYSTEM on
 
 # Install miscellanous libraries
 RUN apt-get update && apt-get install -yq --no-install-recommends \
-    python-numpy \
     libjpeg-dev \
     zlib1g-dev \
     libpng12-dev \
@@ -16,7 +15,8 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     vim \
     wireless-tools \
     unzip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/* \
+    && pip install numpy==1.12.1
 
 # Set the working directory
 WORKDIR /usr/src/app

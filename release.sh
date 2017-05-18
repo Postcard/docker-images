@@ -21,11 +21,23 @@ git tag -a "$version" -m "version $version"
 git push origin
 git push origin --tags
 
-docker tag $COMPANY/$IMAGE_1:latest $COMPANY/$IMAGE_1:$version
-docker tag $COMPANY/$IMAGE_2:latest $COMPANY/$IMAGE_2:$version
-# push it
-docker push $COMPANY/$IMAGE_1:latest
-docker push $COMPANY/$IMAGE_1:$version
+docker tag $COMPANY/raspberry-pi2:latest $COMPANY/raspberry-pi2:$version
+docker tag $COMPANY/raspberry-pi2:latest $COMPANY/raspberrypi2:latest
+docker tag $COMPANY/raspberry-pi2:latest $COMPANY/raspberrypi2:$version
 
-docker push $COMPANY/$IMAGE_2:latest
-docker push $COMPANY/$IMAGE_2:$version
+docker tag $COMPANY/raspberry-pi3:latest $COMPANY/raspberry-pi3:$version
+docker tag $COMPANY/raspberry-pi3:latest $COMPANY/raspberrypi3:latest
+docker tag $COMPANY/raspberry-pi3:latest $COMPANY/raspberrypi3:$version
+
+# push it
+docker push $COMPANY/raspberry-pi2:latest
+docker push $COMPANY/raspberry-pi2:$version
+
+docker push $COMPANY/raspberry-pi3:latest
+docker push $COMPANY/raspberry-pi3:$version
+
+docker push $COMPANY/raspberrypi2:latest
+docker push $COMPANY/raspberrypi2:$version
+
+docker push $COMPANY/raspberrypi3:latest
+docker push $COMPANY/raspberrypi3:$version

@@ -55,7 +55,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     rfkill \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV RESIN_WIFI_CONNECT_VERSION 2.0.8
+ENV RESIN_WIFI_CONNECT_VERSION 2.0.9
 
 RUN curl -SL "https://github.com/Postcard/resin-wifi-connect/archive/v$RESIN_WIFI_CONNECT_VERSION.tar.gz" \
     | tar xzC /usr/src/app/ \

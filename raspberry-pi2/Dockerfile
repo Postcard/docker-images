@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi2-python:2.7
+FROM balenalib/raspberry-pi2-python:3.8
 
 # Enable systemd init system
 ENV INITSYSTEM on
@@ -15,8 +15,11 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     vim \
     wireless-tools \
     unzip \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* \
-    && pip install numpy==1.12.1
+    gcc \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    
+RUN pip install --upgrade pip \
+    && pip install numpy==1.21.2
 
 # Set the working directory
 WORKDIR /usr/src/app
